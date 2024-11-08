@@ -11,4 +11,4 @@ This repository contains:
 1. Change the dataset path with your local path at this line:  
     ``` dataset = pd.read_csv('/../your_local_path/the_dataset_you_want_try.csv')```
 
-## Be sure to install the right library version, otherwise the code might not compile
+## Be sure to install the right library version, otherwise the code might not compile or return a run time error
