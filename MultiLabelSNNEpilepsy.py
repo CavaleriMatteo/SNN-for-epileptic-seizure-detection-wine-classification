@@ -36,7 +36,7 @@ y = l_encode.transform(y)
 y = to_categorical(y)
 
 
-# 70% training, 15% validation e 15% test
+# 70% training, 15% validation and 15% test
 train_size = 0.7
 validation_size = 0.15
 test_size = 0.15

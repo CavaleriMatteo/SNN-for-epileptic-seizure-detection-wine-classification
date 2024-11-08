@@ -191,7 +191,7 @@ nn_hp_global_report = {
     'f1-score': f1_hp
 }
 
-# Compariamo adesso il modello naive con quello ottimizzato
+# Naive model vs opt model
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))
 
 # Plotting
