@@ -32,7 +32,7 @@ from tensorflow import keras
 
 # Importing dataset
 dataset = pd.read_csv('/your/local/path/dataset.csv') # change the path to your local path
-dataset = dataset.drop('Unnamed: 0', axis=1) # drop useless column
+dataset = dataset.drop('Unnamed', axis=1) # drop useless column
 
 # Retrieving values
 X = dataset.iloc[:, 1:178].values
@@ -200,6 +200,12 @@ history_hp = model.fit(X_train, y_train, epochs=15, validation_data=(X_validatio
 
 val_acc_per_epoch = history_hp.history['val_accuracy']
 best_epoch = val_acc_per_epoch.index(max(val_acc_per_epoch)) + 1
+
+
+models = tuner.get_best_models(num_models=1)
+nn_model_hp  = models[0]
+
+history_hp = nn_model_hp.fit(X_train, y_train, epochs=best_epoch, validation_data=(X_validation, y_validation))
 
 # Training metrics
 

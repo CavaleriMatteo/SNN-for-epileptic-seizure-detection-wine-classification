@@ -142,7 +142,12 @@ history_hp = model.fit(X_train, y_train, epochs=15, validation_data=(X_validatio
 
 val_acc_per_epoch = history_hp.history['val_accuracy']
 best_epoch = val_acc_per_epoch.index(max(val_acc_per_epoch)) + 1
-print('Miglior epoch: %d' % (best_epoch,))
+
+models = tuner.get_best_models(num_models=1)
+nn_model_hp  = models[0]
+
+history_hp = nn_model_hp.fit(X_train, y_train, epochs=best_epoch, validation_data=(X_validation, y_validation))
+
 
 
 # Training metrics
